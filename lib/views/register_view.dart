@@ -27,18 +27,18 @@ class _RegisterViewState extends State<RegisterView> {
     return ModalProgressHUD(
       inAsyncCall: isLoading,
       child: Scaffold(
-        backgroundColor:kPraimaryColor,
+        backgroundColor: kPraimaryColor,
 
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Form(
             key: formKey,
             child: ListView(
               children: [
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
 
                 Image.asset('assets/images/scholar.png', height: 100),
-                Text(
+                const Text(
                   'Scholar Chat',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -48,8 +48,8 @@ class _RegisterViewState extends State<RegisterView> {
                     fontFamily: 'Pacifico',
                   ),
                 ),
-                SizedBox(height: 75),
-                Row(
+                const SizedBox(height: 75),
+                const Row(
                   children: [
                     Text(
                       'REGISTER',
@@ -61,14 +61,14 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 CustomTextFormField(
                   onChanged: (data) {
                     email = data;
                   },
                   text: 'Email',
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 CustomTextFormField(
                   onChanged: (data) {
@@ -76,7 +76,7 @@ class _RegisterViewState extends State<RegisterView> {
                   },
                   text: 'Password',
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 CustomButton(
                   onTap: () async {
@@ -86,7 +86,9 @@ class _RegisterViewState extends State<RegisterView> {
                       try {
                         await registerUser();
                         showSnackBar(context, 'Success');
-                        GoRouter.of(context).push(AppRouter.kChatView,extra: email);
+                        GoRouter.of(
+                          context,
+                        ).push(AppRouter.kChatView, extra: email);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
                           showSnackBar(
@@ -108,12 +110,12 @@ class _RegisterViewState extends State<RegisterView> {
                   },
                   text: 'REGISTER',
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'already have an account?',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -121,7 +123,7 @@ class _RegisterViewState extends State<RegisterView> {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Text(
+                      child: const Text(
                         '  Login',
                         style: TextStyle(color: Color(0xffc7ede6)),
                       ),

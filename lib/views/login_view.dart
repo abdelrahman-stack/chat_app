@@ -27,7 +27,7 @@ class _LoginViewState extends State<LoginView> {
     return ModalProgressHUD(
       inAsyncCall: isLoading,
       child: Scaffold(
-        backgroundColor:kPraimaryColor,
+        backgroundColor: kPraimaryColor,
 
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -35,10 +35,10 @@ class _LoginViewState extends State<LoginView> {
             key: formKey,
             child: ListView(
               children: [
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
 
                 Image.asset('assets/images/scholar.png', height: 100),
-                Text(
+                const Text(
                   'Scholar Chat',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -48,8 +48,8 @@ class _LoginViewState extends State<LoginView> {
                     fontFamily: 'Pacifico',
                   ),
                 ),
-                SizedBox(height: 75),
-                Row(
+                const SizedBox(height: 75),
+                const Row(
                   children: [
                     Text(
                       'LOGIN',
@@ -61,14 +61,14 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 CustomTextFormField(
                   onChanged: (data) {
                     email = data;
                   },
                   text: 'Email',
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 CustomTextFormField(
                   obscureText: true,
@@ -77,7 +77,7 @@ class _LoginViewState extends State<LoginView> {
                   },
                   text: 'Password',
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 CustomButton(
                   onTap: () async {
@@ -86,7 +86,9 @@ class _LoginViewState extends State<LoginView> {
                       setState(() {});
                       try {
                         await loginUser();
-                        GoRouter.of(context).push(AppRouter.kChatView, extra: email);
+                        GoRouter.of(
+                          context,
+                        ).push(AppRouter.kChatView, extra: email);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'user-not-found') {
                           showSnackBar(
@@ -108,12 +110,12 @@ class _LoginViewState extends State<LoginView> {
                   },
                   text: 'LOGIN',
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'dont have an account',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -121,7 +123,7 @@ class _LoginViewState extends State<LoginView> {
                       onTap: () {
                         GoRouter.of(context).push(AppRouter.kRegisterView);
                       },
-                      child: Text(
+                      child: const Text(
                         '  Register',
                         style: TextStyle(color: Color(0xffc7ede6)),
                       ),

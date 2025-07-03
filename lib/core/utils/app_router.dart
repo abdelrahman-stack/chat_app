@@ -15,9 +15,9 @@ class AppRouter {
       GoRoute(path: '/', builder: (context, state) => const SplashView()),
       GoRoute(
         path: kRegisterView,
-        builder: (context, state) =>  RegisterView(),
+        builder: (context, state) => const RegisterView(),
       ),
-      GoRoute(path: kLoginView, builder: (context, state) =>  LoginView()),
+      GoRoute(path: kLoginView, builder: (context, state) => const LoginView()),
   GoRoute(
   path: kChatView,
   builder: (context, state) {

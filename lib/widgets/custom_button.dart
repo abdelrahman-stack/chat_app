@@ -15,7 +15,7 @@ final  VoidCallback? onTap;
           borderRadius: BorderRadius.circular(8),
           color: Colors.white,
         ),
-        child: Center(child: Text(text, style: TextStyle(fontSize: 18))),
+        child: Center(child: Text(text, style:const TextStyle(fontSize: 18))),
       ),
     );
   }
