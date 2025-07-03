@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "614613307153",
+    "project_id": "scholar-app-3726f",
+    "storage_bucket": "scholar-app-3726f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614613307153:android:f3ae43ed9b8e99d02346b0",
+        "android_client_info": {
+          "package_name": "com.example.scholar_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMFD7hD94MbgehFxCSq9RFd62SKntNEEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
